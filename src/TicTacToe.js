@@ -60,11 +60,22 @@ const Board = ({ settings }) => {
       <div>Player: {players[order]}</div>
       {winner && <div>Winner: {winner}</div>}
       {board.map((row, i) => (
-        <div key={i}>
+        <div key={i} style={{ display: "flex" }}>
           {row.map((cell, j) => (
-            <button key={j} onClick={() => handleClick(i, j)}>
+            <div
+              key={j}
+              style={{
+                display: "flex",
+                border: "solid 1px #000000",
+                width: "50px",
+                height: "50px",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              onClick={() => handleClick(i, j)}
+            >
               {cell}
-            </button>
+            </div>
           ))}
         </div>
       ))}
